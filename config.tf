@@ -31,7 +31,7 @@ resource "aws_lambda_function" "random_numbers_lambda" {
     function_name = "random_numbers_lambda"
     handler = "lambda.lambda_handler"
 	role = "${aws_iam_role.iam_for_lambda.arn}"
-	s3_bucket = "lambda-code-bucket280720191630"
+	s3_bucket = "${aws_s3_bucket.var_lambda_code.bucket}"
     s3_key = "function.zip"
 	runtime = "python2.7"
 }
