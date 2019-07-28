@@ -6,6 +6,7 @@ jobs:
     steps:
       - checkout
       - run: terraform init
+      - run: terraform destroy
       - run: terraform apply -auto-approve
       - run: apk --no-cache add zip
       - run: zip function.zip lambda.py
