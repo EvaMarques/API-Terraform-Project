@@ -6,10 +6,10 @@ jobs:
     steps:
       - checkout
       - run: terraform init
-      - run: terraform apply
+      - run: terraform apply -auto-approve
       - run: apk --no-cache add zip
-      - run: zip lambda.py.zip lambda.py
-      - run: ls -la
+      - run: zip function.zip lambda.py
+      - run: aws s3 cp function.zip s3://lambda-code-bucket/
 workflows:
   version: 2
   build-deploy:
