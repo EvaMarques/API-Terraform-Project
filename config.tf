@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "var_lambda_code" {
-  bucket = "lambda-code-bucket"
+  bucket = "lambda-code-bucket280720191630"
   acl    = "private"
 }
 

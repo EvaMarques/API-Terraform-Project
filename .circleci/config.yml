@@ -9,7 +9,7 @@ jobs:
       - run: terraform apply -auto-approve
       - run: apk --no-cache add zip
       - run: zip function.zip lambda.py
-      - run: aws s3 cp function.zip s3://lambda-code-bucket/
+      - run: aws s3 cp function.zip s3://lambda-code-bucket280720191630/
 workflows:
   version: 2
   build-deploy:
