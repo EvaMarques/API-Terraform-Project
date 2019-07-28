@@ -36,11 +36,11 @@ resource "aws_lambda_function" "random_numbers_lambda" {
 	runtime = "python2.7"
 }
 
-data "aws_api_gateway_rest_api" "my_rest_api" {
+resource "aws_api_gateway_rest_api" "my_rest_api" {
   name = "my-rest-api"
 }
 
-data "aws_api_gateway_resource" "my_resource" {
+resource "aws_api_gateway_resource" "my_resource" {
   rest_api_id = "${data.aws_api_gateway_rest_api.my_rest_api.id}"
   path        = "/api/generate"
 }
