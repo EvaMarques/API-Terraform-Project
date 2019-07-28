@@ -33,6 +33,7 @@ resource "aws_lambda_function" "random_numbers_lambda" {
 	role = "${aws_iam_role.iam_for_lambda.arn}"
 	s3_bucket = "lambda-code-bucket"
     s3_key = "function.zip"
+	runtime = "python2.7"
 }
 
 data "aws_api_gateway_rest_api" "my_rest_api" {
