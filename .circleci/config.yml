@@ -7,6 +7,9 @@ jobs:
       - checkout
       - run: terraform init
       - run: terraform apply
+      - run: apk --no-cache add zip
+      - run: zip lambda.py.zip lambda.py
+      - run: ls -la
 workflows:
   version: 2
   build-deploy:
