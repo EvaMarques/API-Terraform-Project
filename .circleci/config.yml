@@ -6,6 +6,7 @@ jobs:
     steps:
       - checkout
       - run: terraform init
+      - run: ls -lah
       - run: terraform plan
 workflows:
   version: 2
